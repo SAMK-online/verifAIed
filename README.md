@@ -1,12 +1,97 @@
-# verifAIed
-Introduction:
-Users often struggle to verify whether the news and media content they are consuming is legitimate, leading to the risk of forming incorrect perspectives and opinions. While AI is a powerful tool in generating fake information, it can be equally effective in mitigating its impact. By leveraging real-time web and social media searches, an AI-driven agent can quickly validate any piece of content, ensuring its authenticity and reliability. This approach can help users make informed decisions based on verified, accurate information.
+# VerifAIed
 
-As AI gets more advanced, detection and bad actors attacking in new ways will constantly be a cat and mouse game so instead users will have to adapt to better verify sources and judge on their own and that is the intent of this desktop app, to automatically upon clicking a shortcut command, capture a screenshot of what you are looking at, and accordingly surface relevant content to help user decide and protect from misinformation.
+A powerful desktop application for verifying online content and detecting misinformation using advanced AI technologies.
 
-User Journey:
-User opens the desktop app, and leaves it running in the background.
-Once the app is left open, the user can continue to consume the news/media as they wish to.
-If they find something off, or feel suspicious about the legitimacy of content they are viewing they can use a keyboard shortcut that takes screenshots and takes the user to our app.
-The app uses an AI agent to gain context from the screenshot.
-The extracted info. From the screenshot is run through a web search. Using this search the app can tell users about sources and legitimacy of the data.
+## Features
+
+### 1. Screenshot Analysis
+- Instantly analyze any content on your screen
+- Get real-time fact-checking and verification
+- Receive detailed analysis with source citations
+- Keyboard shortcut: ⌘+⇧+S
+
+### 2. Recording Analysis
+- Record a sequence of screen changes
+- Automatically captures when content changes
+- Analyzes the entire sequence for comprehensive verification
+- Perfect for analyzing dynamic content or scrolling feeds
+- Keyboard shortcut: ⌘+⇧+R
+
+### 3. YouTube Analysis
+- Analyze YouTube videos for misinformation
+- Transcribes and fact-checks video content
+- Provides comprehensive analysis of claims made
+- Verifies statements against reliable sources
+- Works with regular YouTube videos and Shorts
+
+## Technology Stack
+
+- **Frontend**: PyQt5 for native desktop interface
+- **Image Processing**: PIL for image optimization
+- **AI Analysis**: 
+  - Together AI (Llama Vision) for image analysis
+  - Perplexity API for fact verification
+- **Video Processing**: youtube-transcript-api for transcription
+- **Output**: Markdown to HTML rendering
+
+## Setup
+
+1. Clone the repository
+2. Install dependencies:
+```bash
+pip install -r requirements.txt
+```
+
+3. Set up environment variables in `.env`:
+```
+TOGETHER_API_KEY=your_together_api_key
+PERPLEXITY_API_KEY=your_perplexity_api_key
+```
+
+## Usage
+
+1. Launch the application:
+```bash
+python main.py
+```
+
+2. Choose your analysis method:
+   - **Screenshot**: Click "Take Screenshot" or press ⌘+⇧+S
+   - **Recording**: Click "Start Recording" or press ⌘+⇧+R
+   - **YouTube**: Click "Analyze YouTube" and enter video URL
+
+3. View the analysis results with:
+   - Main claims identified
+   - Fact-checking results
+   - Source citations
+   - Overall credibility assessment
+
+## Requirements
+
+- Python 3.8+
+- macOS (primary development platform)
+- API keys for Together AI and Perplexity
+- Internet connection for AI analysis
+
+## Notes
+
+- Screenshot and recording analysis use Together AI's Llama Vision model
+- Fact verification performed by Perplexity's Llama-3.1-Sonar model
+- YouTube analysis uses video transcripts for comprehensive verification
+- All analyses include source citations for verification
+
+## Privacy & Security
+
+- API keys stored securely in .env file
+- No data stored permanently
+- All analysis performed in real-time
+- No user data collection
+
+## Future Development
+
+- Enhanced error handling
+- Additional video platform support
+- Improved source verification
+- Advanced AI model integration
+
+For issues or suggestions, please open a GitHub issue.

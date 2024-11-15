@@ -1,0 +1,12 @@
+PyQt5
+pynput
+mss
+scikit-image
+numpy
+together
+openai
+python-dotenv
+yt-dlp
+markdown2
+Pillow
+youtube-transcript-api==0.6.1
